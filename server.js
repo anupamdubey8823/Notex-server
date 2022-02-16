@@ -12,7 +12,7 @@ app.use(express.json());
 app.use('/', noteRouter);
 
 // Connect to MongoDB
-const uri = process.env.ATLAS_OLD_URI;
+const uri = process.env.ATLAS_URI;
 console.log(uri);
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
