@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-
 require('dotenv').config();
 
 const app = express();
@@ -13,7 +12,8 @@ app.use(express.json());
 app.use('/', noteRouter);
 
 // Connect to MongoDB
-const uri = process.env.ATLAS_URI;
+const uri = process.env.ATLAS_OLD_URI;
+console.log(uri);
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
